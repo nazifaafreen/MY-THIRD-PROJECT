@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Laila", serif;
+    }
+
+    /* Centering wrapper */
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* Background image for the contact container */
+    .contact-container {
+      position: relative;
+      /* To allow pseudo-element positioning */
+      display: flex;
+      width: 100%;
+
+      padding: 40px;
+      border-radius: 10px;
+
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      /* Ensure no background color */
+
+    }
+
+
+
+
+
+    .form-section,
+    .info-section {
+      flex: 1;
+      padding: 5%;
+    }
+
+    .form-section h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .form-section p {
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #3498db;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #e74c3c;
+      color: #fff;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .submit-btn:hover {
+      background-color: #c0392b;
+    }
+
+    .info-section h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: black;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .info-icon {
+      font-size: 1.5em;
+      color: #e74c3c;
+      margin-right: 10px;
+    }
+
+    .info-text {
+      color: black;
+    }
+
+    .info-text strong {
+      color: black;
+    }
+
+   
+
+    .scrolling-text {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .scrolling-text {
+      background-color: #f8d7da;
+      font-size: 20px;
+    }
+
+   
+    .emt {
+      height: 50px;
+    }
+    nav {
+  background-color: #fff;
+  width: 100%;
+
+  position: relative;
+}
+
+.container-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  width: 100%;
+  height: 120px;
+}
+
+.class1,
+.class2,
+.class3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class2 {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: black;
+}
+
+.class2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dropdown {
+  position: relative;
+  width: 140px;
+  text-align: center;
+}
+
+.dropdown:hover {
+  border-bottom: 2px solid;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 145px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.781);
+  z-index: 1;
+  top: 50px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: chocolate;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hamburger i {
+  color:#894414;
+}
+
+.icon {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  color: black;
+  font-size: 20px
+}
+
+@media screen and (max-width: 770px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .class2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    align-items: start;
+  }
+
+  input[type="checkbox"]:checked~.class2 {
+    display: flex;
+
+  }
+
+  .class1 img {
+    width: 100px;
+  }
+}
+
+.logo img {
+  width: 200px;
+  padding: 10px;
+
+}
+    /* Container for entire page */
+    #page-container1 {
+      background-image: url(contect2.jpg);
+      /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      /* Ensures the image covers the whole screen */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
+
+
+    /* Map container style */
+    .map-container {
+      margin-top: 20px;
+      width: 700%;
+      max-width: 1311px;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-heading {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .image-banner {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .banner-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-banner img {
+      width: 200px;
+      padding: 10px;
+
+    }
+
+    .image {
+      display: flex;
+
+      justify-content: center;
+
+    }
+
+    .image1 img {
+      width: 400px;
+    }
+
+    .image1 img,
+    .image img {
+      transition: transform 1.3s ease, box-shadow 0.3s ease;
+      /* Smooth transitions */
+      border-radius: 10px;
+      /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Initial shadow */
+    }
+
+    .image1 img:hover,
+    .image img:hover {
+      transform: scale(1.1);
+      /* Zoom in effect */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      /* Enhanced shadow on hover */
+      filter: brightness(1.1);
+      /* Slight brightness increase */
+    }
+
+    .banner {
+      width: 100%;
+      height: 550px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Banner image with opacity */
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(banner4.jpg);
+      /* Replace with your banner image path */
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+      /* Adjust the opacity of the image here */
+      z-index: -1;
+      /* Makes sure the image stays behind the text */
+    }
+
+    .banner-text {
+      position: relative;
+      /* Text appears above the image */
+
+      color: white;
+    }
+
+    .banner h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: chocolate;
+    }
+
+    .banner p {
+      font-size: 1.5em;
+      color: black;
+    }
+
+    .logo img {
+      width: 200px;
+      padding: 10px;
+
+    }
+    .icons i {
+  font-size: 24px; 
+  color: #333; 
+  margin: 0 10px; 
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color:#e74c3c; 
+}
+
+    .customer h1 {
+      font-size: 2.5rem;
+      text-align: center;
+     
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+    .customer span {
+    color: #c85103;
+}
+
+    /* Flexbox for Testimonials */
+    .flex-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    /* Card Styles */
+    .card {
+      width: 300px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Card Image */
+    .card-icon img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    /* Card Content */
+    .card h2 {
+      font-size: 1rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .card span {
+      font-size: 1rem;
+      color: #c85103;
+      font-weight: bold;
+    }
+
+    .location {
+      text-align: center;
+
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 1000px;
+
+      border-radius: 10px;
+
+    }
+
+    .location h1 {
+      font-size: 2em;
+      color: #c85103;
+      margin-bottom: 10px;
+    }
+
+    .location p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 2px solid #c85103;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 10px;
+    }
+    footer {
+        background-color:#c8a676;
+        color: white;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex: 1 1 calc(25% - 20px);
+        min-width: 200px;
+    }
+
+    .footer-section h2,
+    .footer-section span {
+      color: #894414;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .footer-section p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .footer-section i {
+        margin-right: 10px;
+    }
+
+    .footer-section .icon-2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-section .icon-2 i {
+        font-size: 18px;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-section .icon-2 i:hover {
+        transform: scale(1.3);
+    }
+    .footer-section a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #894414;
+}
+
+    .footer-section input[type="email"] {
+        width: 70%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #894414;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+    }
+
+    .footer-section input::placeholder {
+        color: #ddd;
+        font-size: 14px;
+    }
+
+    .footer-section button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #894414;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .footer-section button:hover {
+        background-color: #5c3921;
+    }
+
+    .rights {
+     
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    .rights p {
+        font-size: 13px;
+        color: white;
+    }  
+
+    @media (max-width: 768px) {
+    .banner {
+        height: 350px; /* Reduce the banner height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 2em; /* Reduce font size for the heading */
+        margin-bottom: 8px; /* Adjust spacing */
+    }
+
+    .banner p {
+        font-size: 1em; /* Reduce font size for the paragraph */
+    }
+
+    .banner-text {
+        padding: 0 20px; /* Add padding for better text readability */
+    }
+ .center-wrapper {
+        flex-direction: column; /* Stack the sections vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack the form and info sections vertically */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    .info-section{
+      display: none;
+    }
+    .image1 img {
+    width: 100%;
+    height: 324px;
+}
+.location {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 10px auto; /* Reduce margin for smaller screens */
+        max-width: 100%; /* Ensure the section takes up full width */
+    }
+
+    .location h1 {
+        font-size: 1.8em; /* Reduce font size for the heading */
+        margin-bottom: 8px; /* Adjust margin */
+    }
+
+    .location p {
+        font-size: 1em; /* Adjust the font size of the paragraph */
+        margin-bottom: 15px; /* Reduce space between paragraph and map */
+    }
+
+    .map-container {
+        height: 300px; /* Reduce map height for smaller screens */
+    }
+  }
+    </style>
+</head>
+
+<body>
+  <div class="scrolling-text">
+    <span>"🍦 Special Offer: Buy 1 Get 1 Free on All Flavors! 🍨"</span>
+  </div>
+  <nav>
+    <div class="container-1">
+      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="menu-toggle" style="display: none;">
+      <div class="class1">
+        <div class="logo">
+          <img src="logo-sweet-frost.png" alt="">
+        </div>
+      </div>
+
+      <!-- Navigation links section (class2) -->
+      <div class="class2">
+        <div class="dropdown">
+          <button class="dropbtn"><a href="Index.html">Home</a></button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="About.html">About</a></button>
+          <div class="dropdown-content">
+            <a href="About.html#story">Our Story</a>
+            <a href="About.html#team"> Team work</a>
+            <a href="About.html#Best">Best ice</a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="product.html">product</a></button>
+          <div class="dropdown-content">
+            <a href="product.html#Chocolate">Chocolate</a>
+            <a href="product.html#Strawberry">Strawberry</a>
+            <a href="product.html#Blackcurrent">Blackcarrent</a>
+            <a href="product.html#Oreo">Oreo</a>
+
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn"><a href="Blog.html">Blog</a></button>
+          <div class="dropdown-content">
+            <a href="Blog.html#blog">Blog</a>
+            <a href="Blog.html#Taste the ice">Taste the Ice </a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="contact.html">Contact
+              us</a></button>
+
+        </div>
+      </div>
+      <div class="class3">
+        <div class="icon">
+          <i class="fa-solid fa-coins"></i>
+          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<hr>
+   <div class="banner">
+    <div class="banner-text">
+      <h1> contact us</h1>
+      <p>Indulge in our premium, hand-crafted ice cream made with love.</p>
+    </div>
+  </div>
+  <div class="emt"></div>
+  <h1 class="main-heading">contact us </h1>
+
+  <!-- Image Section -->
+
+  <div class="center-wrapper">
+    <div class="contact-container">
+      <div class="image1">
+        <img src="about-filler5.webp" alt="">
+      </div>
+      <div class="image">
+
+        <div class="form-section">
+
+          <h2>Get In Touch</h2>
+          <p>Your email address will not be published. Required fields are marked *</p>
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name *" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address *" required>
+            </div>
+            <div class="form-group">
+              <textarea rows="5" placeholder="Your Message *" required></textarea>
+            </div>
+            <button class="submit-btn">Post Message</button>
+          </form>
+        </div>
+        <div class="info-section">
+          <h3>Contact us</h3>
+          <div class="info-item">
+            <span class="info-icon">📧</span>
+            <div class="info-text">
+              <strong>Call us:</strong>+(406) 555-0120<br>
+              <strong>Email:</strong> sweetforest@gmail.com
+            </div>
+          </div>
+
+          <h3>Opening Hours</h3>
+          <div class="info-item">
+            <span class="info-icon">⏰</span>
+            <div class="info-text">
+              Mon – Sat: 7:00 am – 8:00 pm<br>
+              Sunday: 8:00 am – 6:00 pm
+            </div>
+          
+          </div>
+
+          <h3>Our Office</h3>
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <div class="info-text">
+              2972 Westheimer Rd.<br>
+              Santa Ana, Illinois, USA
+            </div>
+          </div>
+          <h3>Stay Connected</h3>
+          <div class="info-item">
+            <div class="icons">
+              <i class="fa-brands fa-square-facebook"></i>
+              <i class="fa-brands fa-square-twitter"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-square-youtube"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location">
+    <h1>Our Location</h1>
+    <p>Come visit us at our ice cream shop! Here's where you can find us:</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381218.4040895027!2d78.63246747910144!3d12.52950811467558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07b5f7552a8097%3A0xd5b12485fa2c94a2!2sAmbur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1699826480157!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="customer">
+    <h1>Our Customers <span>Love Us</span> </h1>
+  </div>
+  <div class="flex-box">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="love ice.jpeg" alt="Customer Testimonial 1">
+      </div>
+      <h2>"The best ice cream I've ever had! Can't wait to come back.I love it!"</h2>
+      <h3>Emma Frost</h3>
+      <span>Ice Cream Enthusiast</span>
+    </div>
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="love ice3.avif" alt="Customer Testimonial 2">
+      </div>
+      <h2>"The variety and flavors are unmatched. Amazing experience!"</h2>
+      <h3>Anna & Smith</h3>
+      <span>Creamy Delight</span>
+    </div>
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="love ice2.jpg" alt="Customer Testimonial 3">
+      </div>
+      <h2>"Every bite is pure joy. I’m in love with this place.It's love at first bite!"</h2>
+      <h3>John Doe</h3>
+      <span>Sweet Bliss</span>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <!-- Logo and Description -->
+      <div class="footer-section">
+       <h2>SWEET FORST</h2>
+        <p>Have a question? Give us a call or fill out the contact form. We'd love to hear from you.</p>
+        <div class="icon-2">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Information Section -->
+      <div class="footer-section">
+        <h2>Information</h2>
+        <p><i class="fa-solid fa-house"></i> 50 Porana Place, Western Casuarinas, Western Australia.</p>
+        <p><i class="fa-solid fa-phone"></i> +(08) 9055 0269</p>
+        <p><i class="fa-solid fa-envelope"></i>sweetforst@gmail.com</p>
+        <p><i class="fa-solid fa-globe"></i> www.sweetforst.com</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h2>Quick Links</h2>
+        <p><a href="About.html">About Us</a></p>
+        <p><a href="product.html">Privacy Policy</a></p>
+        <p><a href="Blog.html">Returns Policy</a></p>
+        <p><a href="contact.html">Shipping Policy</a></p>
+        <p><a href="Index.html">Terms & Conditions</a></p>
+      </div>
+
+      <!-- Subscription Section -->
+      <div class="footer-section">
+        <h2><span>Promotions, new products, and sales. Directly to your inbox.</span></h2>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="rights">
+      <p>&copy; 2024 Sweet Frost. All Rights Reserved.</p>
+      <h3>Desing by V.Nazifa Afreen</h3>
+    </div>
+  </footer>
+</body>
+
+</html>

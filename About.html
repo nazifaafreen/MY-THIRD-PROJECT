@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: "Laila", serif;
+        }
+
+
+       .h2 h1 {
+            color: black;
+            text-align: center;
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            gap: 30px;
+            margin: auto;
+            max-width: 900px;
+        }
+
+        .about img {
+            max-width: 50%;
+            border-radius: 10px;
+            margin-right: 20px;
+
+        }
+
+        .about .p {
+            max-width: 50%;
+        }
+
+        .about h2 {
+            color: pink;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .about p {
+            color: black;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+       .about h2 {
+            color: chocolate;
+            font-style: italic;
+            line-height: 3;
+        }
+
+        .per img {
+            width: 100px;
+            border-radius: 50px;
+        }
+
+        .chef {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .per {
+            display: flex;
+            align-items: center;
+            width: 275px;
+        }
+
+        .son {
+            padding: 10px;
+        }
+
+        .both {
+            display: flex;
+            padding: 15px 0px;
+        }
+
+        .both p {
+            font-size: 15px;
+        }
+
+        .scrolling-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scrolling-text {
+            background-color: #f8d7da;
+            font-size: 20px;
+        }
+
+
+        nav {
+  background-color: #fff;
+  width: 100%;
+
+  position: relative;
+}
+
+.container-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  width: 100%;
+  height: 120px;
+}
+
+.class1,
+.class2,
+.class3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class2 {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: black;
+}
+
+.class2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dropdown {
+  position: relative;
+  width: 140px;
+  text-align: center;
+}
+
+.dropdown:hover {
+  border-bottom: 2px solid;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 145px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.781);
+  z-index: 1;
+  top: 50px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: chocolate;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hamburger i {
+  color: #894414;
+}
+
+.icon {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  color: black;
+  font-size: 20px
+}
+
+@media screen and (max-width: 770px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .class2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    align-items: start;
+  }
+
+  input[type="checkbox"]:checked~.class2 {
+    display: flex;
+
+  }
+
+  .class1 img {
+    width: 100px;
+  }
+}
+
+.logo img {
+  width: 200px;
+  padding: 10px;
+
+}
+
+       .h1 h1 {
+            text-align: center;
+            padding: 10px;
+        }
+       
+.container2{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    margin: 25px;
+}
+
+.item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 315px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    
+}
+
+.item h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.item p {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+}
+.part-end p {
+    font-size: 11px;
+}
+        
+
+      
+        .container3 {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .container3 .card {
+            position: relative;
+            width: 293px;
+            height: 440px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container3 .card .content {
+            position: absolute;
+            bottom: -160px;
+            width: 100%;
+            height: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            flex-direction: column;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 -10 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: bottom 0.5s;
+            transition-delay: 0.8s;
+        }
+
+        .container3 .card:hover .content {
+            bottom: 0px;
+            transition-delay: 0s;
+        }
+
+        .container3 .card .content .contentBox h3 {
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0 15px;
+            line-height: 1.1em;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translate(20px, 30px);
+            transition-delay: 0.6s;
+        }
+
+        .container3 .card:hover .content .contentBox h3 {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .container3 .card .content .contentBox h3 span {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: initial;
+        }
+
+        .container3 .card .content .sci {
+            position: relative;
+            bottom: 10px;
+            display: flex;
+        }
+
+        .container3 .card .content .sci li {
+            list-style: none;
+            margin: 0 10px;
+            transform: translateY(40px);
+            transition: 0.5s;
+            opacity: 0;
+            transition-delay: calc(0.2s * var(--i));
+        }
+
+        .container3 .card:hover .content .sci li {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .container3 .card .content .sci li a {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .star {
+            color: white;
+        }
+        .about2, .help {
+ max-width: 300px;
+}
+
+.about2 span, .help span {
+ font-size: 18px;
+ font-weight: bold;
+ margin-bottom: 15px;
+ display: block;
+}
+.logo img {
+  width: 200px;
+  padding: 10px;
+
+}
+.banner {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Banner image with opacity */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url(banner7.webp); /* Replace with your banner image path */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8; /* Adjust the opacity of the image here */
+            z-index: -1; /* Makes sure the image stays behind the text */
+        }
+
+        .banner-text {
+            position: relative; /* Text appears above the image */
+           
+            color: white;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #894414;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+            color: black;
+        }
+        .emt{
+            height: 50px;
+        }
+        footer {
+        background-color:#c8a676;
+        color: white;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex: 1 1 calc(25% - 20px);
+        min-width: 200px;
+    }
+
+    .footer-section h2,
+    .footer-section span {
+        color: #894414;
+  
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .footer-section p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .footer-section i {
+        margin-right: 10px;
+    }
+
+    .footer-section .icon-2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-section .icon-2 i {
+        font-size: 18px;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-section .icon-2 i:hover {
+        transform: scale(1.3);
+    }
+
+    .footer-section input[type="email"] {
+        width: 70%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #894414;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+    }
+
+    .footer-section input::placeholder {
+        color: #ddd;
+        font-size: 14px;
+    }
+    .footer-section a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #894414;
+}
+
+    .footer-section button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #894414;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .footer-section button:hover {
+        background-color:#523521;
+    }
+
+    .rights {
+       
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    .rights p {
+        font-size: 13px;
+        color: white;
+    }
+    .container2 {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.part1 img {
+    width: 120px;
+    display: flex;
+    padding: 22px;
+}
+.part3 img {
+    width: 120px;
+    display: flex;
+    padding: 22px;
+}
+.one-img {
+    display: flex;
+    width: 325px;
+}
+.part-end {
+    font-size: 9px;
+    /* justify-items: center; */
+    align-content: center;
+    padding: 10px;
+}
+.part1 {
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 23%; */
+    justify-content: space-around;
+}
+
+.part2 {
+    padding: 10px;
+    /* align-items: center; */
+    align-content: center;
+}
+.part3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.emt{
+  height: 75px;
+}
+.part2 img {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.part2 img {
+    width: 300px;
+}
+.part2 img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    filter: brightness(1.0); /* Slight brightness effect */
+}
+.h h3{
+  text-align: center;
+  color:#894414;
+}
+.h h1{
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .banner {
+    height: 400px; /* Reduce banner height */
+  }
+
+  .banner h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .banner p {
+    font-size: 1.2em; /* Adjust paragraph font size */
+  }
+  .about {
+    flex-direction: column; /* Stack the content vertically */
+    text-align: center; /* Center-align the text */
+    gap: 20px; /* Reduce gap between elements */
+  }
+
+  .about img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+    margin-right: 0; /* Remove margin when stacked */
+  }
+
+  .about .p {
+    max-width: 90%; /* Allow more width for text */
+  }
+
+  .about h2 {
+    font-size: 1.2em; /* Adjust heading font size */
+    line-height: 2; /* Adjust line height */
+  }
+
+  .about p {
+    font-size: 0.9em; /* Reduce paragraph font size */
+  }
+  
+}
+    </style>
+</head>
+
+<body>
+    <div class="scrolling-text">
+        <span>"🍦 Special Offer: Buy 1 Get 1 Free on All Flavors! 🍨"</span>
+    </div>
+    <nav>
+        <div class="container-1">
+            <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+            <div class="class1">
+                <div class="logo">
+                    <img src="logo-sweet-frost.png" alt="">
+                </div>
+            </div>
+
+            <!-- Navigation links section (class2) -->
+            <div class="class2">
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Index.html">Home</a></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="About.html">About</a></button>
+                    <div class="dropdown-content">
+                        <a href="About.html#story">Our Story</a>
+                        <a href="About.html#team"> Team work</a>
+                        <a href="About.html#Best">Best ice</a>
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="product.html">product</a></button>
+                    <div class="dropdown-content">
+                        <a href="product.html#Chocolate">Chocolate</a>
+                        <a href="product.html#Strawberry">Strawberry</a>
+                        <a href="product.html#Blackcurrent">Blackcarrent</a>
+                        <a href="product.html#Oreo">Oreo</a>
+
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Blog.html">Blog</a></button>
+                    <div class="dropdown-content">
+                        <a href="Blog.html#blog">Blog</a>
+                        <a href="Blog.html#Taste the ice">Taste the Ice </a>
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="contact.html">Contact
+                            us</a></button>
+
+                </div>
+            </div>
+            <div class="class3">
+                <div class="icon">
+                    <i class="fa-solid fa-coins"></i>
+                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <div class="banner">
+        <div class="banner-text">
+            <h1> Sweet Frost Ice Cream!</h1>
+            <p>Indulge in our premium, hand-crafted ice cream made with love.</p>
+        </div>
+    </div>
+    <div class="emt"></div>
+   <div class="h2">
+
+       <h1>Empowering Businesses Large and Small</h1>
+   </div>
+    <div class="about" id="story">
+        <img src="about.webp" alt="About Us Image">
+        <div class="p">
+            <h2>About Us</h2>
+            <p>Introduce your company with a broad vision statement. The viewer should come away with a strong sense
+                of what your company stands for, and what it is trying to achieve. Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Magnam earum, quod dolor ipsa praesentium a nesciunt aperiam obcaecatiet
+                voluptatibus consequuntur, ea labore veniam similique perferendis quae deleniti vero possimus. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Labore, quia molestiae quidem aut aliquid tempore
+                consequuntur dolores voluptatem maiores nobis illum accusantium vel ducimus temporibus asperiores
+                necessitatibus? Quam, nihil omnis?</p>
+        </div>
+    </div>
+
+    <div class="emt"></div>
+    <section>
+        <div class="h1">
+            <h1>Team Work</h1>
+
+        </div>
+        <div class="container3">
+            <div class="card">
+                <div class="imgbox">
+                    <img src="team mem.jpg" height="500px">
+                </div>
+                <div class="content">
+                    <div class="contentBox">
+                        <h3>Rossana Elettra<br><span>"I've shopped at many online fashion stores, but Gluck is truly I
+                                keep coming back for more!</span></h3>
+                    </div>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="team mem2.jpg" height="500px">
+                </div>
+                <div class="content">
+                    <div class="contentBox">
+                        <h3>Manuel Ponzio<br><span>Gluck is my go-to for the latest fashion trends and the shopping
+                                experience is a breeze.</span></h3>
+                    </div>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="emt"></div>
+            <div class="card" id="team">
+                <div class="imgbox">
+                    <img src="team mem3.jpg" height="500px">
+                </div>
+                <div class="content">
+                    <div class="contentBox">
+                        <h3>Ruf Giustina<br><span>Their commitment to style and quality is evident in every piece they
+                                offer. "</span></h3>
+                    </div>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+   <div class="emt"></div>
+    <div class="h" id="Best">
+        <h3>Ice is Always Freash</h3>
+        <h1>We Grow Best Ice</h1>
+      </div>
+      <div class="container2">
+        <div class="part1">
+          <div class="one-img">
+            <div class="part-end">
+            <h1>Scoop Cream</h1>
+            <p> Drop us a message, give us a call,sweet moments matter to us   Let’s connect and make every scoop memorable.</p>
+          </div>
+            <img src="icon ice1.avif" alt="">
+          </div>
+        <div class="one-img">
+          <div class="part-end">
+          <h1>Cone Cream</h1>
+          <p>Craving a delicious cone of creamy goodness  freshest and most delightful ice cream cones in town</p>
+        </div>
+          <img src="icon ice2.avif" alt="">
+        </div>
+        <div class="one-img">
+          <div class="part-end">
+          <h1>Kulfi</h1>
+          <p>Experience the authentic taste of tradition with every bite of our rich and creamy kulfi classic flavors or love </p>
+        </div>
+          <img src="icon ice3.avif" alt="">
+        </div>
+    
+        </div>
+        <div class="part2">
+          <img src="kids ice cream.webp" alt="">
+    
+        </div>
+        <div class="part3">
+    
+          <div class="one-img">
+            <img src="icon ice4.avif" alt="">
+            <div class="part-end">
+            <h1>Cream Milk Shake</h1>
+            <p>Nunc egestas augue at pellentesque laoreet felis eros vehicula leo Lorem ipsum dolor sit amet.</p>
+          </div>
+          </div>
+          <div class="one-img">
+            <img src="icon ice5.avif" alt="">
+            <div class="part-end">
+            <h1>Ice Bars</h1>
+            <p>Fusce risus nisl viverra et tempor et pretium in sapien donec venenatis Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+          </div>
+          </div>
+          <div class="one-img">
+            <img src="icon ice6.avif" alt="">
+            <div class="part-end">
+            <h1>Full Creamy</h1>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          </div>
+          </div>
+    
+        </div>
+      </div>
+    <div class="emt"></div>
+    <div class="container2">
+        <div class="item">
+            <img src="card1.png" alt="Best Fit Icon 1">
+            <h2>Free Shipping</h2>
+            <p>Capped at $39 per order</p>
+        </div>
+        <div class="item">
+            <img src="card2.png" alt="Best Fit Icon 2">
+            <h2>14-Day Returns </h2>
+            <p>Shop with confidence</p>
+        </div>
+        <div class="item">
+            <img src="card3.png" alt="Best Fit Icon 3">
+            <h2> Securety Payments </h2>
+            <p>Up to 12 months installments</p>
+        </div>
+    </div>
+    <div class="emt"></div>
+    <footer>
+        <div class="footer-container">
+          <!-- Logo and Description -->
+          <div class="footer-section">
+           <h2>SWEET FORST</h2>
+            <p>Have a question? Give us a call or fill out the contact form. We'd love to hear from you.</p>
+            <div class="icon-2">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+    
+          <!-- Information Section -->
+          <div class="footer-section">
+            <h2>Information</h2>
+            <p><i class="fa-solid fa-house"></i> 50 Porana Place, Western Casuarinas, Western Australia.</p>
+            <p><i class="fa-solid fa-phone"></i> +(08) 9055 0269</p>
+            <p><i class="fa-solid fa-envelope"></i> sweetforst@gmail.com</p>
+            <p><i class="fa-solid fa-globe"></i> www.sweetforst.com</p>
+          </div>
+    
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h2>Quick Links</h2>
+            <p><a href="About.html">About Us</a></p>
+            <p><a href="product.html">Privacy Policy</a></p>
+            <p><a href="Blog.html">Returns Policy</a></p>
+            <p><a href="contact.html">Shipping Policy</a></p>
+            <p><a href="Index.html">Terms & Conditions</a></p>
+          </div>
+    
+          <!-- Subscription Section -->
+          <div class="footer-section">
+           <h2><span>Promotions, new products, and sales. Directly to your inbox.</span></h2>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+          </div>
+        </div>
+    
+        <div class="rights">
+          <p>&copy; 2024 Sweet Frost. All Rights Reserved.</p>
+          <h3>Desing by V.Nazifa Afreen</h3>
+        </div>
+      </footer>
+</body>
+
+</html>

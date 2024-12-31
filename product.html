@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: "Laila", serif;
+    }
+
+    .image-container {
+      display: inline-block;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(209, 207, 208, 0.74);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cute-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .image-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(143, 116, 130, 0.8);
+    }
+
+    .image-container:hover .cute-image {
+      transform: scale(1.1);
+    }
+
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: rgba(126, 126, 126, 0.4);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: background 0.3s ease;
+    }
+
+    .image-container:hover::before {
+      background: rgba(255, 105, 180, 0.7);
+      border-radius: 15px;
+    }
+
+    .info {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .info span {
+      display: block;
+    }
+
+    .image-container:hover .info {
+      opacity: 1;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    .head1 h1 {
+      text-align: center;
+      color: chocolate;
+      padding: 20px;
+    }
+
+
+    .scrolling-text {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .scrolling-text {
+      background-color: #f8d7da;
+      font-size: 20px;
+    }
+
+
+
+    nav {
+      background-color: #fff;
+      width: 100%;
+
+      position: relative;
+    }
+
+    .container-1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0px;
+      width: 100%;
+      height: 120px;
+    }
+
+    .class1,
+    .class2,
+    .class3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .class2 {
+      display: flex;
+      gap: 20px;
+    }
+
+    .dropdown a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .class2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .dropdown {
+      position: relative;
+      width: 140px;
+      text-align: center;
+    }
+
+    .dropdown:hover {
+      border-bottom: 2px solid;
+    }
+
+    .dropbtn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 145px;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.781);
+      z-index: 1;
+      top: 50px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background-color: chocolate;
+      color: white;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hamburger i {
+      color: #894414;
+    }
+
+    .icon {
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      color: black;
+      font-size: 20px
+    }
+
+    @media screen and (max-width: 770px) {
+
+      .hamburger {
+        display: block;
+      }
+
+      .class2 {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        z-index: 1;
+        align-items: start;
+      }
+
+      input[type="checkbox"]:checked~.class2 {
+        display: flex;
+
+      }
+
+      .class1 img {
+        width: 100px;
+      }
+    }
+
+    .logo img {
+      width: 200px;
+      padding: 10px;
+
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image img {
+      width: 30%;
+    }
+
+    .video {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      /* Set the height of the banner */
+      overflow: hidden;
+      /* Ensures the video doesn't overflow the container */
+    }
+
+    /* Background video styling */
+    .video video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* Centers the video */
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      /* Ensures the video covers the entire container */
+    }
+
+    /* Text overlay styling */
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* Centers the text */
+      color: black;
+      text-align: center;
+      font-size: 20px;
+
+    }
+
+    .text-overlay h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: chocolate;
+    }
+
+    .text-overlay p {
+      font-size: 1.5em;
+      color: black;
+    }
+
+    .emt {
+      height: 50px;
+    }
+
+   
+
+    footer {
+      background-color: #c8a676;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: auto;
+      gap: 20px;
+    }
+
+    .footer-section {
+      flex: 1 1 calc(25% - 20px);
+      min-width: 200px;
+    }
+
+    .footer-section h2,
+    .footer-section span {
+      color: #894414;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .footer-section p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .footer-section i {
+      margin-right: 10px;
+    }
+
+    .footer-section .icon-2 {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-section .icon-2 i {
+      font-size: 18px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-section .icon-2 i:hover {
+      transform: scale(1.3);
+    }
+
+    .footer-section input[type="email"] {
+      width: 70%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #894414;
+      border-radius: 5px;
+      background-color: transparent;
+      color: white;
+    }
+
+    .footer-section input::placeholder {
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .footer-section button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #894414;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .footer-section a {
+      color: #f9f9f9;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+      color: #894414;
+    }
+
+    .footer-section button:hover {
+      background-color: #5a3c27;
+    }
+
+    .rights {
+
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    .rights p {
+      font-size: 13px;
+      color: white;
+    }
+
+
+    @media (max-width: 768px) {
+    .video {
+        height: 300px; /* Reduce video height for smaller screens */
+    }
+
+    .text-overlay {
+        font-size: 16px; /* Adjust base font size */
+      
+    }
+
+    .text-overlay h1 {
+        font-size: 2em; /* Reduce heading size */
+    }
+
+    .text-overlay p {
+        font-size: 25px; /* Reduce paragraph size for smaller screens */
+    }
+   
+  
+    .image-container {
+        width: 150px; /* Adjust width for smaller screens */
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .info {
+        font-size: 12px; /* Reduce font size for better fit */
+        padding: 6px 10px; /* Adjust padding for compact design */
+    }
+
+    .cute-image {
+        object-fit: cover; /* Ensure the image scales appropriately */
+    }
+
+   
+
+    .head1 h1 {
+        font-size: 1.5em; /* Adjust font size for the heading */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+
+}
+  </style>
+</head>
+
+<body>
+  <div class="scrolling-text">
+    <span>"🍦 Special Offer: Buy 1 Get 1 Free on All Flavors! 🍨"</span>
+  </div>
+  <nav>
+    <div class="container-1">
+      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="menu-toggle" style="display: none;">
+      <div class="class1">
+        <div class="logo">
+          <img src="logo-sweet-frost.png" alt="">
+        </div>
+      </div>
+
+      <!-- Navigation links section (class2) -->
+      <div class="class2">
+        <div class="dropdown">
+          <button class="dropbtn"><a href="Index.html">Home</a></button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="About.html">About</a></button>
+          <div class="dropdown-content">
+            <a href="About.html#story">Our Story</a>
+            <a href="About.html#team"> Team work</a>
+            <a href="About.html#Best">Best ice</a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="product.html">product</a></button>
+          <div class="dropdown-content">
+            <a href="product.html#Chocolate">Chocolate</a>
+            <a href="product.html#Strawberry">Strawberry</a>
+            <a href="product.html#Blackcurrent">Blackcarrent</a>
+            <a href="product.html#Oreo">Oreo</a>
+
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn"><a href="Blog.html">Blog</a></button>
+          <div class="dropdown-content">
+            <a href="Blog.html#blog">Blog</a>
+            <a href="Blog.html#Taste the ice">Taste the Ice </a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn"><a href="contact.html">Contact
+              us</a></button>
+
+        </div>
+      </div>
+      <div class="class3">
+        <div class="icon">
+          <i class="fa-solid fa-coins"></i>
+          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <div class="video">
+    <!-- Background video -->
+    <video autoplay muted loop>
+      <source src="ice cream video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Text overlay -->
+    <div class="text-overlay">
+      <h1>Product</h1>
+      "Indulge in creamy, made fresh daily to satisfy your sweet cravings!"
+    </div>
+  </div>
+  <div class="emt"></div>
+
+  <div class="head1" id="ice-cream">
+    <h1>Chocolate</h1>
+  </div>
+  <div class="box">
+    <div class="image-container" id="Chocolate">
+      <img src="chocolate.jpg" class="cute-image">
+      <div class="info">
+        <span>Choco Bar</span>
+        <span>₹100</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate1.jpg" class="cute-image">
+      <div class="info">
+        <span>Chocolate Scoop</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate2.jpg" class="cute-image">
+      <div class="info">
+        <span>Chocolate Sundae</span>
+        <span>₹110</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate4.jpg" class="cute-image">
+      <div class="info">
+        <span>Chocolate Milkshake</span>
+        <span>₹130</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate5.webp" class="cute-image">
+      <div class="info">
+        <span>Nutty Almond Ice Cream</span>
+        <span>₹140</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate6.webp" class="cute-image">
+      <div class="info">
+        <span>Chocolate Explosion Sundae</span>
+        <span>₹110</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate7.jpg" class="cute-image">
+      <div class="info">
+        <span>Chocolate Cone</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate8.jpg" class="cute-image">
+      <div class="info">
+        <span>Double Chocolate Fudge</span>
+        <span>₹130</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate9.webp" class="cute-image">
+      <div class="info">
+        <span>Chocolate Waffle Cone</span>
+        <span>₹140</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="chocolate10.webp" class="cute-image">
+      <div class="info">
+        <span>Classic Chocolate Delight</span>
+        <span>₹100</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="head1" id="ice-cream">
+    <h1>Strawberry</h1>
+  </div>
+  <div class="box">
+    <div class="image-container" id="Strawberry">
+      <img src="strewberry1.png" class="cute-image">
+      <div class="info">
+        <span>Strawberry Vanilla Sundae</span>
+        <span>₹130</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strewberry2.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Cream Bar</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strewberry3.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Scoops Delight</span>
+        <span>₹115</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="E-2.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Parfait</span>
+        <span>₹135</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strewberry5.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Soft Serve</span>
+        <span>₹115</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strawberry6.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Waffle Bowl</span>
+        <span>₹145</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strawberry7.jpg" class="cute-image">
+      <div class="info">
+        <span>Fresh Strawberry Sorbet</span>
+        <span>₹125</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strawberry8.jpg" class="cute-image">
+      <div class="info">
+        <span>Double Strawberry Cone</span>
+        <span>₹135</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strawberry9.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Gelato</span>
+        <span>₹100</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="strawberry10.jpg" class="cute-image">
+      <div class="info">
+        <span>Strawberry Ice Cream Tub</span>
+        <span>₹155</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="head1" id="ice-cream">
+    <h1>Blackcarrent</h1>
+  </div>
+  <div class="box">
+    <div class="image-container" id="Blackcarrent">
+      <img src="blackcarrent1.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Scoop Cone</span>
+        <span>₹100</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent2.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Popsicle</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent3.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Cup Delight</span>
+        <span>₹110</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent4.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Petal Sundae</span>
+        <span>₹130</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent5.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Berry Bowl</span>
+        <span>₹140</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent6.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Blueberry Mix</span>
+        <span>₹160</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent7.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Swirl Cone</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent1.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Ice Pop</span>
+        <span>₹130</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent9.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Frozen Delight</span>
+        <span>₹140</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="blackcarrent10.jpg" class="cute-image">
+      <div class="info">
+        <span>Blackcurrant Blueberry</span>
+        <span>₹140</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="head1" id="ice-cream">
+    <h1>Oreo</h1>
+  </div>
+  <div class="box">
+    <div class="image-container" id="Oreo">
+      <img src="oreo1.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Cone Delight</span>
+        <span>₹150</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo2.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Cream Cup</span>
+        <span>₹100</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo3.jpg" class="cute-image">
+      <div class="info">
+        <span>Classic Oreo Scoop Cone</span>
+        <span>₹115</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo4.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Ice Cream Scoops</span>
+        <span>₹135</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo5.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Ice Cream Bar</span>
+        <span>₹125</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo6.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Sandwich Treat</span>
+        <span>₹145</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo7.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Chocolate Swirl</span>
+        <span>₹155</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo8.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Ice Cream Tray</span>
+        <span>₹115</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo9.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Shake Blast</span>
+        <span>₹120</span>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="oreo10.jpg" class="cute-image">
+      <div class="info">
+        <span>Oreo Ice Cream Sundae</span>
+        <span>₹130</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="emt"></div>
+  <footer>
+    <div class="footer-container">
+      <!-- Logo and Description -->
+      <div class="footer-section">
+        <h2>SWEET FORST</h2>
+        <p>Have a question? Give us a call or fill out the contact form. We'd love to hear from you.</p>
+        <div class="icon-2">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Information Section -->
+      <div class="footer-section">
+        <h2>Information</h2>
+        <p><i class="fa-solid fa-house"></i> 50 Porana Place, Western Casuarinas, Western Australia.</p>
+        <p><i class="fa-solid fa-phone"></i> +(08) 9055 0269</p>
+        <p><i class="fa-solid fa-envelope"></i> swwetforst@gmail.com</p>
+        <p><i class="fa-solid fa-globe"></i> www.sweetforst.com</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h2>Quick Links</h2>
+        <p><a href="About.html">About Us</a></p>
+        <p><a href="product.html">Privacy Policy</a></p>
+        <p><a href="Blog.html">Returns Policy</a></p>
+        <p><a href="contact.html">Shipping Policy</a></p>
+        <p><a href="Index.html">Terms & Conditions</a></p>
+      </div>
+
+      <!-- Subscription Section -->
+      <div class="footer-section">
+        <h2><span>Promotions, new products, and sales. Directly to your inbox.</span></h2>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="rights">
+      <p>&copy; 2024 Sweet Frost. All Rights Reserved.</p>
+      <h3>Desing by V.Nazifa Afreen</h3>
+    </div>
+  </footer>
+
+</body>
+
+</html>

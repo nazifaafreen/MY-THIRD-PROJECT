@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: "Laila", serif;
+        }
+
+        body {
+
+
+            background-color: #f8f9fa;
+            color: #333;
+
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 300px;
+            text-align: center;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .blog-image:hover {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+
+        .scrolling-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scrolling-text {
+            background-color: #f8d7da;
+            font-size: 20px;
+        }
+
+
+
+
+        nav {
+      background-color: #fff;
+      width: 100%;
+
+      position: relative;
+    }
+
+    .container-1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0px;
+      width: 100%;
+      height: 120px;
+    }
+
+    .class1,
+    .class2,
+    .class3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .class2 {
+      display: flex;
+      gap: 20px;
+    }
+
+    .dropdown a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .class2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .dropdown {
+      position: relative;
+      width: 140px;
+      text-align: center;
+    }
+
+    .dropdown:hover {
+      border-bottom: 2px solid;
+    }
+
+    .dropbtn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 145px;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.781);
+      z-index: 1;
+      top: 50px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background-color: chocolate;
+      color: white;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hamburger i {
+      color: #894414;
+    }
+
+    .icon {
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      color: black;
+      font-size: 20px
+    }
+
+    @media screen and (max-width: 770px) {
+
+      .hamburger {
+        display: block;
+      }
+
+      .class2 {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        z-index: 1;
+        align-items: start;
+      }
+
+      input[type="checkbox"]:checked~.class2 {
+        display: flex;
+
+      }
+
+      .class1 img {
+        width: 100px;
+      }
+    }
+
+    .logo img {
+      width: 200px;
+      padding: 10px;
+
+    }
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .banner {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Banner image with opacity */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url(banner8.jpg); /* Replace with your banner image path */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7; /* Adjust the opacity of the image here */
+            z-index: -1; /* Makes sure the image stays behind the text */
+        }
+
+        .banner-text {
+            position: relative; /* Text appears above the image */
+           
+            color: white;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: chocolate;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+            color: black;
+        }
+        .emt{
+            height: 50px;
+        }
+        footer {
+        background-color:#c8a676;
+        color: white;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex: 1 1 calc(25% - 20px);
+        min-width: 200px;
+    }
+
+    .footer-section h2,
+    .footer-section span {
+        color: #894414;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .footer-section p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .footer-section i {
+        margin-right: 10px;
+    }
+
+    .footer-section .icon-2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-section .icon-2 i {
+        font-size: 18px;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-section .icon-2 i:hover {
+        transform: scale(1.3);
+    }
+
+    .footer-section input[type="email"] {
+        width: 70%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #894414;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+    }
+
+    .footer-section input::placeholder {
+        color: #ddd;
+        font-size: 14px;
+    }
+
+    .footer-section button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #894414;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .footer-section button:hover {
+        background-color: #4e3523;
+    }
+    .footer-section a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #894414;
+}
+
+    .rights {
+   
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    .rights p {
+        font-size: 13px;
+        color: white;
+    }
+
+
+    
+    .video-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .video-box {
+      position: relative;
+      width: 250px;
+      height: 200px; /* Fixed height for the videos */
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-box:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
+      transform: translateY(-10px);
+    }
+
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      border-radius: 10px;
+      transition: filter 0.3s ease;
+    }
+
+    .video-box video:hover {
+      filter: brightness(1.1);
+    }
+    .h1-1 {
+    text-align: center;
+    color: #ba540b;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 350px; /* Reduce the banner height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 2em; /* Reduce font size for the heading */
+        margin-bottom: 8px; /* Adjust spacing */
+    }
+
+    .banner p {
+        font-size: 1em; /* Reduce font size for the paragraph */
+    }
+
+    .banner-text {
+        padding: 0 20px; /* Add padding for better text readability */
+    }
+    .video-box{
+        width: 165px;
+        height: 180px;
+    }
+    .blog-post{
+        width: 165px;
+    }
+    .image-container{
+        height: 135px;
+    }
+    .blog-post h2 {
+        font-size: 20px; /* Adjust the heading font size */
+    }
+
+    .blog-post p {
+        font-size: 15px; /* Adjust the paragraph font size */
+    }
+    .blog-container {
+       
+        align-items: center; /* Center the blog posts */
+        gap: 20px; /* Adjust the gap between posts */
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="scrolling-text">
+        <span>"🍦 Special Offer: Buy 1 Get 1 Free on All Flavors! 🍨"</span>
+    </div>
+    <nav>
+        <div class="container-1">
+          <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+          <input type="checkbox" id="menu-toggle" style="display: none;">
+          <div class="class1">
+            <div class="logo">
+              <img src="logo-sweet-frost.png" alt="">
+            </div>
+          </div>
+    
+          <!-- Navigation links section (class2) -->
+          <div class="class2">
+            <div class="dropdown">
+              <button class="dropbtn"><a href="Index.html">Home</a></button>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn"><a href="About.html">About</a></button>
+              <div class="dropdown-content">
+                <a href="About.html#story">Our Story</a>
+                <a href="About.html#team"> Team work</a>
+                <a href="About.html#Best">Best ice</a>
+    
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn"><a href="product.html">product</a></button>
+              <div class="dropdown-content">
+                <a href="product.html#Chocolate">Chocolate</a>
+                <a href="product.html#Strawberry">Strawberry</a>
+                <a href="product.html#Blackcurrent">Blackcarrent</a>
+                <a href="product.html#Oreo">Oreo</a>
+    
+              </div>
+            </div>
+    
+            <div class="dropdown">
+              <button class="dropbtn"><a href="Blog.html">Blog</a></button>
+              <div class="dropdown-content">
+                <a href="Blog.html#blog">Blog</a>
+                <a href="Blog.html#Taste the ice">Taste the Ice </a>
+    
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn"><a href="contact.html">Contact
+                  us</a></button>
+    
+            </div>
+          </div>
+          <div class="class3">
+            <div class="icon">
+              <i class="fa-solid fa-coins"></i>
+              <i class="fa-regular fa-user"></i>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <hr>
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Blog</h1>
+            <p>  Here's a guide to making ice cream part of every trip.</p>
+        </div>
+    </div>
+    <div class="emt"></div>
+    <header>
+        <h1>Blog Page</h1>
+    </header>
+
+    <section class="blog-container" id="blog">
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blog2.jpg" alt="Blog Image 1" class="blog-image">
+            </div>
+            <h2>Baby Bliss</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blog3.jpg" alt="Blog Image 2" class="blog-image">
+            </div>
+            <h2>Campus Scoops</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blog4.jpg" alt="Blog Image 3" class="blog-image">
+            </div>
+            <h2>Chill Bites</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blog6.jpg" alt="Blog Image 4" class="blog-image">
+            </div>
+            <h2>Bite and Bond</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blo1.png" alt="Blog Image 1" class="blog-image">
+            </div>
+            <h2>Sp. Oreo Shake</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blo2.png" alt="Blog Image 2" class="blog-image">
+            </div>
+            <h2>Brownie Ice Cream</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blo3.png" alt="Blog Image 3" class="blog-image">
+            </div>
+            <h2>Ice Cream Cones</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+
+        <div class="blog-post">
+            <div class="image-container">
+                <img src="blo4.png" alt="Blog Image 4" class="blog-image">
+            </div>
+            <h2>Fresh Fruit Icecream</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+    </section>
+
+    
+  <div class="emt"></div>
+      <div class="h1-1"  id="Taste the ice">
+        <h1>Every One Taste The Ice Cream</h1>
+      </div>
+  <div class="video-container" >
+    <!-- Video 1 -->
+    <div class="video-box">
+      <video src="video.1.mp4" muted loop autoplay></video>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-box">
+      <video src="video.2.mp4" muted loop autoplay></video>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-box">
+      <video src="video3.mp4" muted loop autoplay></video>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-box">
+      <video src="video4.mp4" muted loop autoplay></video>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-box">
+      <video src="video5.mp4" muted loop autoplay></video>
+    </div>
+  </div>
+    <div class="emt"></div>
+    <footer>
+        <div class="footer-container">
+          <!-- Logo and Description -->
+          <div class="footer-section">
+           <h2>SWEET FORST</h2>
+            <p>Have a question? Give us a call or fill out the contact form. We'd love to hear from you.</p>
+            <div class="icon-2">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+    
+          <!-- Information Section -->
+          <div class="footer-section">
+            <h2>Information</h2>
+            <p><i class="fa-solid fa-house"></i> 50 Porana Place, Western Casuarinas, Western Australia.</p>
+            <p><i class="fa-solid fa-phone"></i> +(08) 9055 0269</p>
+            <p><i class="fa-solid fa-envelope"></i> sweetforst@gmail.com</p>
+            <p><i class="fa-solid fa-globe"></i> www.sweetforst.com</p>
+          </div>
+    
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h2>Quick Links</h2>
+            <p><a href="About.html">About Us</a></p>
+            <p><a href="product.html">Privacy Policy</a></p>
+            <p><a href="Blog.html">Returns Policy</a></p>
+            <p><a href="contact.html">Shipping Policy</a></p>
+            <p><a href="Index.html">Terms & Conditions</a></p>
+          </div>
+    
+          <!-- Subscription Section -->
+          <div class="footer-section">
+            <h2><span>Promotions, new products, and sales. Directly to your inbox.</span></h2>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+          </div>
+        </div>
+    
+        <div class="rights">
+          <p>&copy; 2024 Sweet Frost. All Rights Reserved.</p>
+          <h3>Desing by V.Nazifa Afreen</h3>
+        </div>
+      </footer>
+    
+
+</body>
+
+</html>
